@@ -1,0 +1,17 @@
+4.031.0
+30, 
+None 
+None 
+None 
+10 
+4 
+Resultado: 11 data_hora: 07/02/2023 - 21:07:50 
+Resultado: None data_hora: 07/02/2023 - 21:07:50 
+Resultado: 4 data_hora: 07/02/2023 - 21:15:24 
+Resultado: 10 data_hora: 07/02/2023 - 21:18:19 
+Resultado: 4 data_hora: 07/02/2023 - 21:24:30 
+Resultado: 12 data_hora: 07/02/2023 - 21:24:30 
+Resultado: 10 data_hora: 07/02/2023 - 21:39:02 
+Resultado: 1 data_hora: 07/02/2023 - 21:39:02 
+Resultado: 5 data_hora: 07/02/2023 - 21:40:12 
+Resultado: 8 data_hora: 07/02/2023 - 21:40:12 
