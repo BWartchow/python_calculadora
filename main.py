@@ -4,7 +4,8 @@ import datetime
 casos_de_teste_ok = ('1 + 41', '46 + -5', '32 - -10', '45 - 3',
                   '7 * 6', '42 / 1', '2 ** 10', '2 ** -5')
 
-casos_de_teste_falha = ('1+8', '2 -9', 'a + 8', 'meu nome aqui', '19** 2', 'asdf - 5', '5--10')
+casos_de_teste_falha = ('1+8', '2 -9', 'a + 8', 'meu nome aqui',
+                        '19** 2', 'asdf - 5', '5--10')
 
 DATA = datetime.datetime.now()
 data_str = DATA.strftime("%d/%m/%Y - %H:%M:%S")

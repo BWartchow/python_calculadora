@@ -1,10 +1,9 @@
+""" Módulo com as Classes Calculadora e Arquivo"""
+
 import datetime
 
 DATA = datetime.datetime.now()
 data_str = DATA.strftime("%d/%m/%Y - %H:%M:%S")
-
-# {f"operacao": "{num1} {operacao} {num2}", "resultado": 11, "data_hora": "{data_str}"}
-# {"operacao": "{num1} {operacao} {num2}", "erro": "{erro}", "data_hora": "{data_str}"}
 
 ###############################################################################
 
@@ -14,7 +13,6 @@ class Calculadora:
 
     def __init__(self, entrada: str) -> None:
         """ Método construtor da classe """
-        # único parâmetro obrigatório de construção a operação digitada pelo usuário
         # Manipula string digitada pelo usuário, separando por indices
         self.operacao = entrada.split()
         print(f"Operação recebida = {self.operacao}")
@@ -28,6 +26,7 @@ class Calculadora:
         print(f"Valor 02 = {self.num2}")
 
         self.resultado = ""
+
         # Atributos da classe arquivo:
         self.acerto = Arquivo
         self.falha = Arquivo
@@ -36,41 +35,52 @@ class Calculadora:
     def verifica_operacao(self):
         """ Método que identifica qual é a operação requisitada pelo usuário"""
         entrada = self.operacao
+        # Verifica se há operador de adição:
         if entrada[1] == "+":
             print("Operação de adição")
+            # Faz a operação requisitada:
             self.resultado = Calculadora.somar(Calculadora, entrada)
             print(self.resultado)
+            # Grava resultado da operação:
             self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
             self.acerto.grava_acerto(Arquivo, self.txt)
-
+        # Verifica se há operador de subtração:
         elif entrada[1] == "-":
             print("Operação de subtração")
+            # Faz a operação requisitada:
             self.resultado = Calculadora.subtrair(Calculadora, entrada)
             print(self.resultado)
+            # Grava resultado da operação:
             self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
             self.acerto.grava_acerto(Arquivo, self.txt)
-
+        # Verifica se há operador de multiplicação:
         elif entrada[1] == "*":
             print("Operação de multiplicação")
+            # Faz a operação requisitada:
             self.resultado = Calculadora.multiplicacar(Calculadora, entrada)
             print(self.resultado)
+            # Grava resultado da operação:
             self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
             self.acerto.grava_acerto(Arquivo, self.txt)
-
+        # Verifica se há operador de potenciação:
         elif entrada[1] == "**":
             print("Operação de potenciação")
+            # Faz a operação requisitada:
             self.resultado = Calculadora.elevar(Calculadora, self.operacao)
             print(self.resultado)
+            # Grava resultado da operação:
             self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
             self.acerto.grava_acerto(Arquivo, self.txt)
-
+        # Verifica se há operador de divisão:
         elif entrada[1] == "/":
             print("Operação de divisão")
+            # Faz a operação requisitada:
             self.resultado = Calculadora.dividir(Calculadora, entrada)
-            if self.resultado == None:
+            if self.resultado == None: # Por exemplo 0 / 0
                 print("Resultado inválido")
             else:
                 print(self.resultado)
+                # Grava resultado da operação:
                 self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
                 self.acerto.grava_acerto(Arquivo, self.txt)
 
@@ -125,7 +135,6 @@ class Arquivo(Calculadora):
 
     def grava_acerto(self, txt):
         """ Método que grava as operações válidas em arquivo txt"""
-        #txt = {"operacao":self.operacao, "resultado":self.resultado, "data_hora":data_str}
         with open('acertos.txt', 'a', encoding='utf-8') as arquivo:
             arquivo.write(f"{txt} \n")
 
@@ -133,3 +142,5 @@ class Arquivo(Calculadora):
         """ Método que grava as operações inválidas em log de erros"""
         with open('erros.log', 'a', encoding='utf-8') as arquivo:
             arquivo.write(f"{txt} \n")
+
+###############################################################################
