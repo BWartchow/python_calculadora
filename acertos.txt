@@ -15,3 +15,16 @@ Resultado: 10 data_hora: 07/02/2023 - 21:39:02
 Resultado: 1 data_hora: 07/02/2023 - 21:39:02 
 Resultado: 5 data_hora: 07/02/2023 - 21:40:12 
 Resultado: 8 data_hora: 07/02/2023 - 21:40:12 
+Resultado: 3 data_hora: 08/02/2023 - 07:46:08 
+{'operacao': 1, 'resultado': 1, 'data_hora': '08/02/2023 - 08:06:08'} 
+{'operacao': 1, 'resultado': 1, 'data_hora': '08/02/2023 - 08:06:08'} 
+{'operacao': ['3', '+', '5'], 'resultado': '', 'data_hora': '08/02/2023 - 08:26:25'} 
+{'operacao': ['6', '+', '5'], 'resultado': 11, 'data_hora': '08/02/2023 - 08:29:20'} 
+{'operacao': ['4', '+', '1'], 'resultado': 5, 'data_hora': '08/02/2023 - 08:33:13'} 
+{'operacao': ['5', '*', '4'], 'resultado': '', 'data_hora': '08/02/2023 - 08:34:51'} 
+{'operacao': ['5', '*', '4'], 'resultado': 20, 'data_hora': '08/02/2023 - 08:37:24'} 
+{'operacao': ['5', '/', '0'], 'resultado': None, 'data_hora': '08/02/2023 - 09:35:27'} 
+{'operacao': ['5', '/', '0'], 'resultado': None, 'data_hora': '08/02/2023 - 09:48:21'} 
+{'operacao': ['1', '+', '4'], 'resultado': 5, 'data_hora': '08/02/2023 - 09:52:17'} 
+{'operacao': ['0', '/', '0'], 'resultado': None, 'data_hora': '08/02/2023 - 09:52:17'} 
+{'operacao': ['1', '+', '41'], 'resultado': 42, 'data_hora': '08/02/2023 - 10:04:26'} 

@@ -20,3 +20,14 @@ Entrada Inválida!!  data_hora: 07/02/2023 - 21:39:02
 Entrada Inválida!!  data_hora: 07/02/2023 - 21:39:02 
 Entrada Inválida!!  data_hora: 07/02/2023 - 21:39:02 
 Entrada Inválida!!  data_hora: 07/02/2023 - 21:39:02 
+Entrada Inválida!!  data_hora: 08/02/2023 - 09:01:51 
+{'operacao': '1+4', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 09:34:22'} 
+{'operacao': '5*4', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 09:35:27'} 
+{'operacao': 'saf', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 09:35:27'} 
+Não consigo dividir por zero... :( 
+{'operacao': ['5', '/', '0'], 'resultado': 'Não consigo dividir por zero... :(', 'data_hora': '08/02/2023 - 09:48:21'} 
+{'operacao': '1+4', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 09:52:17'} 
+{'operacao': '0/0', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 09:52:17'} 
+{'operacao': ['0', '/', '0'], 'resultado': 'Não consigo dividir por zero... :(', 'data_hora': '08/02/2023 - 09:52:17'} 
+{'operacao': ['0', '/', '0'], 'resultado': 'Não consigo dividir por zero... :(', 'data_hora': '08/02/2023 - 09:54:36'} 
+{'operacao': '1+8', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 10:04:26'} 

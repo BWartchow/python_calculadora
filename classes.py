@@ -27,95 +27,109 @@ class Calculadora:
         self.num2 = self.operacao[-1]
         print(f"Valor 02 = {self.num2}")
 
+        self.resultado = ""
         # Atributos da classe arquivo:
         self.acerto = Arquivo
         self.falha = Arquivo
+        self.txt = dict
 
     def verifica_operacao(self):
         """ Método que identifica qual é a operação requisitada pelo usuário"""
-        try:
-            if self.operacao[1] == "+":
-                print("Operação de adição")
-                resultado = Calculadora.somar(self.operacao)
-                print(resultado)
-                self.acerto.grava_acerto(str(resultado))
+        entrada = self.operacao
+        if entrada[1] == "+":
+            print("Operação de adição")
+            self.resultado = Calculadora.somar(Calculadora, entrada)
+            print(self.resultado)
+            self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
+            self.acerto.grava_acerto(Arquivo, self.txt)
 
-            elif self.operacao[1] == "-":
-                print("Operação de subtração")
-                resultado = Calculadora.subtrair(self.operacao)
-                print(resultado)
-                self.acerto.grava_acerto(str(resultado))
+        elif entrada[1] == "-":
+            print("Operação de subtração")
+            self.resultado = Calculadora.subtrair(Calculadora, entrada)
+            print(self.resultado)
+            self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
+            self.acerto.grava_acerto(Arquivo, self.txt)
 
-            elif self.operacao[1] == "*":
-                print("Operação de multiplicação")
-                resultado = Calculadora.multiplicacar(self.operacao)
-                print(resultado)
-                self.acerto.grava_acerto(str(resultado))
+        elif entrada[1] == "*":
+            print("Operação de multiplicação")
+            self.resultado = Calculadora.multiplicacar(Calculadora, entrada)
+            print(self.resultado)
+            self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
+            self.acerto.grava_acerto(Arquivo, self.txt)
 
-            elif self.operacao[1] == "**":
-                print("Operação de potenciação")
-                resultado = Calculadora.elevar(self.operacao)
-                print(resultado)
-                self.acerto.grava_acerto(str(resultado))
+        elif entrada[1] == "**":
+            print("Operação de potenciação")
+            self.resultado = Calculadora.elevar(Calculadora, self.operacao)
+            print(self.resultado)
+            self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
+            self.acerto.grava_acerto(Arquivo, self.txt)
 
-            elif self.operacao[1] == "/":
-                print("Operação de divisão")
-                resultado = Calculadora.dividir(self.operacao)
-                print(resultado)
-                self.acerto.grava_acerto(str(resultado))
+        elif entrada[1] == "/":
+            print("Operação de divisão")
+            self.resultado = Calculadora.dividir(Calculadora, entrada)
+            if self.resultado == None:
+                print("Resultado inválido")
             else:
-                print("Entrada inválida")
-        except IndexError:
-            with open('erros.log', 'a', encoding='utf-8') as arquivo:
-                arquivo.write(f'Entrada Inválida!! data_hora: {data_str} \n')
+                print(self.resultado)
+                self.txt = {"operacao":entrada, "resultado":self.resultado, "data_hora":data_str}
+                self.acerto.grava_acerto(Arquivo, self.txt)
 
-    def somar(self):
+        else:
+            print("Não entendi a operação... :(")
+
+
+    def somar(self, conta):
         """ Método de adição """
-        soma = int(self[0]) + int(self[-1])
+        self.conta = conta
+        soma = int(self.conta[0]) + int(self.conta[-1])
         return soma
 
-    def subtrair(self):
+    def subtrair(self, conta):
         """ Método de subtração """
-        subtracao = int(self[0]) - int(self[-1])
+        self.conta = conta
+        subtracao = int(self.conta[0]) - int(self.conta[-1])
         return subtracao
 
-    def multiplicacar(self):
+    def multiplicacar(self, conta):
         """ Método de multiplicação """
-        multiplicacao = int(self[0]) * int(self[-1])
+        self.conta = conta
+        multiplicacao = int(self.conta[0]) * int(self.conta[-1])
         return multiplicacao
 
-    def dividir(self):
+    def dividir(self, conta):
         """ Método de divisão"""
+        self.conta = conta
         try:
-            divisao = int(self[0]) / int(self[-1])
+            divisao = int(self.conta[0]) / int(self.conta[-1])
             return divisao
         except ZeroDivisionError:
             erro = "Não consigo dividir por zero... :("
-            with open('erros.log', 'a', encoding='utf-8') as arquivo:
-                arquivo.write(f'{erro} \n')
-            return print(erro)
+            txt = {"operacao":conta, "resultado":erro, "data_hora":data_str}
+            Arquivo.grava_erro(Arquivo, txt)
 
-    def elevar(self):
+    def elevar(self, conta):
         """ Método de exponenciação """
-        potenciacao = int(self[0]) ** int(self[-1])
+        self.conta = conta
+        potenciacao = int(self.conta[0]) ** int(self.conta[-1])
         return potenciacao
 
 
 ###############################################################################
 
-class Arquivo:
+class Arquivo(Calculadora):
     """ Classe responsável por gerenciar o salvamento das operações """
 
     def __init__(self) -> None:
         self.acertou = "acertos.txt"
         self.errou = "erros.log"
 
-    def grava_acerto(self):
+    def grava_acerto(self, txt):
         """ Método que grava as operações válidas em arquivo txt"""
+        #txt = {"operacao":self.operacao, "resultado":self.resultado, "data_hora":data_str}
         with open('acertos.txt', 'a', encoding='utf-8') as arquivo:
-            arquivo.write(f'Resultado: {self} data_hora: {data_str} \n')
+            arquivo.write(f"{txt} \n")
 
-    def grava_erro(self):
+    def grava_erro(self, txt):
         """ Método que grava as operações inválidas em log de erros"""
         with open('erros.log', 'a', encoding='utf-8') as arquivo:
-            arquivo.write(f'Resultado: {self} data_hora: {data_str} \n')
+            arquivo.write(f"{txt} \n")
