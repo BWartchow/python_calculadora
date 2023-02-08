@@ -31,3 +31,23 @@ Não consigo dividir por zero... :(
 {'operacao': ['0', '/', '0'], 'resultado': 'Não consigo dividir por zero... :(', 'data_hora': '08/02/2023 - 09:52:17'} 
 {'operacao': ['0', '/', '0'], 'resultado': 'Não consigo dividir por zero... :(', 'data_hora': '08/02/2023 - 09:54:36'} 
 {'operacao': '1+8', 'resultado': 'Entrada Inválida!', 'data_hora': '08/02/2023 - 10:04:26'} 
+{'operacao': 'Vazio', 'resultado': 'Tentativa de interrupção do programa', 'data_hora': '08/02/2023 - 10:52:46'} 
+{'operacao': '1+1', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:09:08'} 
+{'operacao': '5+5', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:11:02'} 
+{'operacao': '0/5', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:11:02'} 
+{'operacao': '1+8', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': '2 -9', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': 'a + 8', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': 'meu nome aqui', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': '19** 2', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': 'asdf - 5', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': '5--10', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:22:13'} 
+{'operacao': '1+8', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:09'} 
+{'operacao': '2 -9', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:09'} 
+{'operacao': '1+8', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': '2 -9', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': 'a + 8', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': 'meu nome aqui', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': '19** 2', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': 'asdf - 5', 'resultado': 'O primeiro termo não é um número válido', 'data_hora': '08/02/2023 - 12:40:40'} 
+{'operacao': '5--10', 'resultado': 'Você digitou poucos termos', 'data_hora': '08/02/2023 - 12:40:40'} 
